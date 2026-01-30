@@ -7,8 +7,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Theos environment
-        uses: msdrigg/setup-theos@master # Dùng bản này để sửa lỗi "repository not found"
+      - name: Install Theos Directly
+        run: |
+          export THEOS=/Users/runner/theos
+          git clone --recursive https://github.com/theos/theos.git $THEOS
+          echo "THEOS=$THEOS" >> $GITHUB_ENV
+          echo "$THEOS/bin" >> $GITHUB_PATH
 
       - name: Compile IzanagiV16
         run: make
