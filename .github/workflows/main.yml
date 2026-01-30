@@ -1,0 +1,13 @@
+name: Build Dylib
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: theos/setup-theos@master
+      - run: make
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Izanagi-Dylib
+          path: .theos/obj/debug/IzanagiV16.dylib
