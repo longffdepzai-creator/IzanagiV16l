@@ -1,0 +1,7 @@
+Package: com.long.izanagi
+Name: IzanagiV16
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Mod Menu by Pham Hai Long
+Author: Pham Hai Long
